@@ -1,0 +1,167 @@
+/* style dasar */
+
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #ddd;
+    /* supaya ada jarak antar baris */
+    line-height: 1.65; 
+    /* supaya bisa nge scroll bawah karena kontennya abis */
+    padding-bottom: 1000px;
+}
+
+/* Latihan 1 */
+
+.container-satu{
+    width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    /* supaya ada jarak antar konten, beri padding */
+    padding: 20px;
+    /* kalo dikasih padding, ukuran kotaknya akan berubah */
+    /* supaya tidak berubah, beri box-sizing */
+    box-sizing: border-box;
+    display: flex;
+}
+
+.kolom-utama{
+    flex: 3;
+    /* kolom utama ada di kolom 2, jadi harus kasih order di semua kolomnya */
+    order: 2;
+}
+
+.sidebar-satu{
+    flex: 1;
+    order: 1;
+}
+
+.sidebar-dua{
+    flex: 1;
+    order: 3;
+}
+
+/* Latihan 2 */
+
+.container-dua{
+    max-width: 800px;
+    margin: 50px auto;
+    
+}
+
+.layanan{
+    /* supaya tidak terlalu mepet batas kiri&kanan */
+    padding: 20px;
+    /* supaya ukuran kotaknya tidak berubah-ubah */
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.layanan.satu{
+    background-color: rgb(119, 199, 255);
+}
+
+.layanan.dua{
+    background-color: rgb(103, 216, 103);
+}
+
+.layanan.tiga{
+    background-color: rgb(255, 124, 124);
+}
+
+/* Latihan 3 */
+.container-tiga{
+    max-width: 800px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    /* Membuat gambar sisanya di posisi tengah baris */
+    justify-content: center;
+}
+
+.thumbnail{
+    /* 1 Baris maksimal 4 gambar  */
+    width: 50%;
+}
+
+.thumbnail img{
+    width: 100%;
+}
+
+/* Latihan 4 */
+
+.container-empat{
+    width: 800px;
+    margin: 50px auto;
+    display: flex;
+}
+
+.card{
+    border: 1px solid #999;
+    border-radius: 10px;
+    background-color: #eee;
+    overflow: hidden;
+    margin: 10px;
+    flex: 1;
+}
+
+.card .header{
+    height: 150px;
+    background-color: #666;
+}
+
+.card .content{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.card.besar{
+    transform: scale(1.12);
+}
+
+/* Latihan 5 */
+
+.container-lima{
+    width: 500px;
+    height: 500px;
+    margin: 50px auto;
+    border: 5px solid black;
+    display: flex;
+}
+
+.kotak{
+    width: 100px;
+    height: 100px;
+    background-color: brown;
+    color: white;
+    margin: auto;
+    display: flex;
+}
+
+.kotak span{
+    margin: auto;
+}
+
+/* Responsive */  
+
+/* supaya flexbox berjalan di minimal 600px */
+@media (min-width: 600px){
+    .container-dua{
+        /* supaya layanannya berjejer ke kanan */
+        display: flex;
+        /* supaya elemen 1 mepet kiri dan elemen lainnya mepet kanan*/
+        justify-content: space-between;
+    }
+
+    .layanan{
+        width: 30%;
+    }
+
+    .thumbnail{
+        /* Kalo diatas 600px */
+        width: 25%;
+    }
+}
